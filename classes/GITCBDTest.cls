@@ -3,15 +3,6 @@ public class GITCBDTest {
     //
     //
     //
-    //
-    //
-    //
-    // sssssssssssssssssssssssssssssssssssssssssssssssss
-    // ssssssssssssss
-    // sssssssssssssssssssssssssssssssss
-    // sssss
-    //
-    //
-    //222222222222222222222222222222222222222222222222222
+    //+ Git commit test with momen
 
 }
