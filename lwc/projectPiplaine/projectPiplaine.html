@@ -1,0 +1,130 @@
+<template>
+	<div class="header">
+		<div class="slds-tabs_card ">
+			<div class="slds-page-header">
+				<div class="slds-page-header__row">
+					<div class="slds-page-header__col-title">
+						<div class="slds-media">
+							<div class="slds-media__figure">
+								<span class="slds-icon_container slds-icon-standard-opportunity">
+                                 <lightning-icon icon-name="standard:record_create" alternative-text="record_create" title="record_create"></lightning-icon>
+                            </span>
+							</div>
+							<div class="slds-media__body">
+								<div class="slds-page-header__name">
+									<div class="slds-page-header__name-title">
+										<h1>
+											<span>Create a new project pipeline </span>
+											<span class="slds-page-header__title slds-truncate" title="Recently Viewed">Project Pipeline </span>
+										</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<lightning-layout >
+		<template if:true={showSpinner}>
+			<lightning-spinner alternative-text="Loading" variant="brand" size="large">
+			</lightning-spinner>
+		</template>
+		<lightning-layout-item size="2" padding="around-small">
+			<lightning-card variant="Narrow">
+				<div class="cardOne">
+					<lightning-icon icon-name="standard:agent_home" alternative-text="agent_home!" title="agent_home"
+						onclick={callParent}></lightning-icon>
+					<div class="buttonLabel">Back Home</div>
+					<div class="container slds-p-top_medium">
+						<lightning-icon icon-name='action:new' alternative-text='add' title='Add Salesforce'
+							onclick={handleButtonClick} size='small'></lightning-icon>
+					</div>
+					<div class="buttonLabel">Add Salesforce Org </div>
+				</div>
+			</lightning-card>
+		</lightning-layout-item>
+		<lightning-layout-item size="10" padding="around-small" class="cardWidth">
+			<lightning-card variant="Narrow">
+				<div class="card2Height">
+					<lightning-layout multiple-rows="false" vertical-align="start">
+						<template if:true={fields}>
+							<template for:each={boxNumber} for:item="box" key={box}>
+								<lightning-layout-item size="2" key={box}>
+									<div class="box2">
+										<template if:false={box.isShowButtan}>
+											<div class="lokupBox1" onmouseover={handleMouseOver}
+												onmouseleave={handleMouseLeave}>
+												<div if:true={showButton}>
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+           												 <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon> 
+    											    </button>
+												</div>
+												<div class="slds-p-left_x-small box_1">
+													<div class="slds-p-top_large">
+														<img src={imageURL} alt="Arrow Image" height="100px" width="100px"/>
+         													   </div>
+														<div class="slds-box lokup_Box1">
+															<div class="alignCenter">
+																<lightning-record-picker label="SalesforceOrg"
+																	variant="label-hidden"
+																	placeholder="Search Salesforce Org.."
+																	object-api-name="SalesforceOrg__c"
+																	onchange={handleChange}>
+																</lightning-record-picker>
+															</div>
+														</div>
+													</div>
+												</div>
+										</template>
+									</div>
+									<div class="box1">
+										<template if:true={box.isShowButtan}>
+											<div class="slds-box lokup_Box2">
+												<div class="alignCenter">
+													<lightning-record-picker label="SalesforceOrg"
+														variant="label-hidden" placeholder="SalesforceOrg...."
+														object-api-name="SalesforceOrg__c" onchange={handleChange}>
+													</lightning-record-picker>
+												</div>
+											</div>
+										</template>
+									</div>
+								</lightning-layout-item>
+							</template>
+						</template>
+					</lightning-layout>
+					<template if:true={fields}>
+						<div style="position: relative;">
+							<lightning-layout multiple-rows="true" vertical-align="start">
+								<lightning-layout-item size="4" padding="around-small">
+								</lightning-layout-item>
+								<lightning-layout-item size="4" padding="around-small">
+									<!----<lightning-record-picker label="Project" placeholder="Search Project.."
+										object-api-name="Project__c" onchange={handleProjectChange}>
+									</lightning-record-picker>---->
+
+
+									<c-custom-lookup icon-name="standard:user" s-object-api-name="Project__c"
+										label="Project" onlookupupdate={handleLookupSelection}
+										placeholder="Search Project...">
+									</c-custom-lookup>
+
+									<lightning-input type="text" variant="standard" name="projectPipelineName"
+										label="Project Pipeline Name" placeholder="type here..."
+										onchange={handleNameChange} value={projectPipelineName}></lightning-input>
+									<div class="center-button">
+										<button class="slds-button slds-button_brand buttonSave" onclick={handleClick} >Save</button>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+						</div>
+					</template>
+				</div>
+
+			</lightning-card>
+		</lightning-layout-item>
+
+	</lightning-layout>
+</template>

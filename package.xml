@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountTriggerHelper</members>
+        <members>AccountTriggerHelper2</members>
+        <members>AppendNoEmailToContacts</members>
+        <members>BitbucketAuth</members>
+        <members>BitbucketCommit</members>
+        <members>ChangePasswordController</members>
+        <members>ChangePasswordControllerTest</members>
+        <members>ContactExportToExcel</members>
+        <members>CustomLookupCtrl</members>
+        <members>DataController</members>
+        <members>DataCotr</members>
+        <members>FlowController</members>
+        <members>ForgotPasswordController</members>
+        <members>ForgotPasswordControllerTest</members>
+        <members>GetSalesforeceOrg</members>
+        <members>JsonObj</members>
+        <members>MultiObjectLookupController</members>
+        <members>MyProfilePageController</members>
+        <members>MyProfilePageControllerTest</members>
+        <members>ProjectPipelineController</members>
+        <members>SiteLoginController</members>
+        <members>SiteLoginControllerTest</members>
+        <members>SiteRegisterController</members>
+        <members>SiteRegisterControllerTest</members>
+        <members>updateContacts2</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <members>SiteLogin</members>
+        <members>SitePoweredBy</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>AccountDetails</members>
+        <members>AnswersHome</members>
+        <members>BandwidthExceeded</members>
+        <members>ChangePassword</members>
+        <members>ContactExportToExcel</members>
+        <members>Exception</members>
+        <members>FileNotFound</members>
+        <members>ForgotPassword</members>
+        <members>ForgotPasswordConfirm</members>
+        <members>IdeasHome</members>
+        <members>InMaintenance</members>
+        <members>MyProfilePage</members>
+        <members>OmniChanelVf</members>
+        <members>OmniChanelVfLiveChat</members>
+        <members>SiteLogin</members>
+        <members>SiteRegister</members>
+        <members>SiteRegisterConfirm</members>
+        <members>SiteTemplate</members>
+        <members>StdExceptionTemplate</members>
+        <members>Unauthorized</members>
+        <members>UnderConstruction</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>AccountTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Case.Standard</members>
+        <members>Lead.Standard</members>
+        <name>AssignmentRule</name>
+    </types>
+    <types>
+        <members>MultiObjectLookup</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Internal Zone</members>
+        <name>Community</name>
+    </types>
+    <types>
+        <members>RMA_Integration</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
+        <members>Omni_Chanel</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>DataTable</members>
+        <members>Diff_Chekar</members>
+        <members>Project_Pipeline</members>
+        <members>Project_Pipeline_2</members>
+        <members>Project__c</members>
+        <members>Project_pipeline__c</members>
+        <members>SalesforceOrg__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Account.Standard_Account_Duplicate_Rule</members>
+        <members>Contact.Standard_Contact_Duplicate_Rule</members>
+        <members>Lead.Standard_Lead_Duplicate_Rule</members>
+        <name>DuplicateRule</name>
+    </types>
+    <types>
+        <members>Salesforce_Sport_Team</members>
+        <name>EmbeddedServiceLiveAgent</name>
+    </types>
+    <types>
+        <members>Case.Standard</members>
+        <name>EscalationRule</name>
+    </types>
+    <types>
+        <members>ContactCenter_UtilityBar</members>
+        <members>CrisisCenter_UtilityBar</members>
+        <members>ExpressionSetConsole_UtilityBar</members>
+        <members>FlowsApp_UtilityBar</members>
+        <members>Home_Page_Default</members>
+        <members>LightningSalesConsole_UtilityBar</members>
+        <members>LightningSales_UtilityBar</members>
+        <members>LightningService_UtilityBar</members>
+        <members>Opportunity_Record_Page</members>
+        <members>Opportunity_Record_Page1</members>
+        <members>RevenueCloudConsole_UtilityBar</members>
+        <members>SalesCloudMobile_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>AccountUpdateContactvalue</members>
+        <members>Account_Fax_Is_Null_Eroor_of_contact</members>
+        <members>Account_Name_Chang_Flow</members>
+        <members>Call_Flows_From_Apex</members>
+        <members>Contact_Email_Send_Email</members>
+        <members>Lead_Convert</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>AccountUpdateContactvalue</members>
+        <members>Account_Fax_Is_Null_Eroor_of_contact</members>
+        <members>Account_Name_Chang_Flow</members>
+        <members>Call_Flows_From_Apex</members>
+        <members>Contact_Email_Send_Email</members>
+        <members>Lead_Convert</members>
+        <name>FlowDefinition</name>
+    </types>
+    <types>
+        <members>DE Default</members>
+        <name>HomePageLayout</name>
+    </types>
+    <types>
+        <members>ceSpinner</members>
+        <members>contactFrom</members>
+        <members>customLookup</members>
+        <members>customMultiPickList</members>
+        <members>customObjectlookup</members>
+        <members>diff_Chekar</members>
+        <members>dropDwon</members>
+        <members>lWCIteration</members>
+        <members>multiObjectLwc</members>
+        <members>multiSelectPickList</members>
+        <members>multiSelectPickListParent</members>
+        <members>navigationLWCTechdicer</members>
+        <members>orgPiplaine</members>
+        <members>parentComponent</members>
+        <members>pipline2222</members>
+        <members>projectPiplaine</members>
+        <members>roleTypeComp</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Salesforce_Sport_Team</members>
+        <name>LiveChatButton</name>
+    </types>
+    <types>
+        <members>live_agent_setup_flow</members>
+        <name>LiveChatDeployment</name>
+    </types>
+    <types>
+        <members>Account.Standard_Account_Match_Rule_v1_0</members>
+        <members>Contact.Standard_Contact_Match_Rule_v1_1</members>
+        <members>Lead.Standard_Lead_Match_Rule_v1_0</members>
+        <name>MatchingRule</name>
+    </types>
+    <types>
+        <members>Experience_Profile_Manager</members>
+        <members>Live_Agent_Setup_Flow</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Salesforce_Sport_Team</members>
+        <members>default_presence_config</members>
+        <name>PresenceUserConfig</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Analytics Cloud Integration User</members>
+        <members>Analytics Cloud Security User</members>
+        <members>Authenticated Website</members>
+        <members>B2B Reordering Portal Buyer Profile</members>
+        <members>Chatter External User</members>
+        <members>Chatter Free User</members>
+        <members>Chatter Moderator User</members>
+        <members>ContractManager</members>
+        <members>Cross Org Data Proxy User</members>
+        <members>Custom%3A Marketing Profile</members>
+        <members>Custom%3A Sales Profile</members>
+        <members>Custom%3A Support Profile</members>
+        <members>Customer Community Login User</members>
+        <members>Customer Community Plus Login User</members>
+        <members>Customer Community Plus User</members>
+        <members>Customer Community User</members>
+        <members>Customer Portal Manager Custom</members>
+        <members>Customer Portal Manager Standard</members>
+        <members>External Apps Login User</members>
+        <members>External Identity User</members>
+        <members>Force%2Ecom - App Subscription User</members>
+        <members>Force%2Ecom - Free User</members>
+        <members>Gold Partner User</members>
+        <members>Guest License User</members>
+        <members>High Volume Customer Portal User</members>
+        <members>HighVolumePortal</members>
+        <members>Identity User</members>
+        <members>MarketingProfile</members>
+        <members>Minimum Access - API Only Integrations</members>
+        <members>Minimum Access - Salesforce</members>
+        <members>Omni Chanel Profile</members>
+        <members>Partner App Subscription User</members>
+        <members>Partner Community Login User</members>
+        <members>Partner Community User</members>
+        <members>PlatformPortal</members>
+        <members>Read Only</members>
+        <members>Salesforce API Only System Integrations</members>
+        <members>Silver Partner User</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        <members>StandardAul</members>
+        <members>Work%2Ecom Only User</members>
+        <members>zuber</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Custom_Sales_Profile_profilePasswordPolicy1715184356372</members>
+        <members>zuber_profilePasswordPolicy1715184115168</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>Custom_Sales_Profile_profileSessionSetting1715184356457</members>
+        <members>zuber_profileSessionSetting1715184115266</members>
+        <name>ProfileSessionSetting</name>
+    </types>
+    <types>
+        <members>Salesforce_Sport</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>Salesforce_Sport</members>
+        <name>QueueRoutingConfig</name>
+    </types>
+    <types>
+        <members>Case.LogACall</members>
+        <members>Case.NewChildCase</members>
+        <members>CollaborationGroup.NewGroupMember</members>
+        <members>CollaborationGroup.NewGroupRecord</members>
+        <members>FeedItem.NewTaskFromFeedItem</members>
+        <members>LogACall</members>
+        <members>NewAccount</members>
+        <members>NewCase</members>
+        <members>NewContact</members>
+        <members>NewEvent</members>
+        <members>NewGroup</members>
+        <members>NewLead</members>
+        <members>NewNote</members>
+        <members>NewOpportunity</members>
+        <members>NewTask</members>
+        <members>Quote.SendEmail</members>
+        <members>SendEmail</members>
+        <members>Snapins_Case_PrechatQuickAction_08hJ1000000PAtT_1733498171474</members>
+        <members>Snapins_Contact_PrechatQuickAction_08hJ1000000PAtT_1733498171443</members>
+        <members>Task.Defer</members>
+        <members>Task.EditDescription</members>
+        <members>Task.UpdatePriority</members>
+        <members>Task.UpdateStatus</members>
+        <name>QuickAction</name>
+    </types>
+    <types>
+        <members>Metric.Completion</members>
+        <members>Metric.Progress</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>ApexDevNet</members>
+        <members>CBDURL</members>
+        <members>Production_Login_Url</members>
+        <members>cbdTest</members>
+        <members>test1</members>
+        <members>test111111</members>
+        <members>test2</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>EBotR_v3</members>
+        <members>EBotR_v4</members>
+        <members>EBotR_v5</members>
+        <members>EinsteinBotReports</members>
+        <members>EinsteinBotReports_v2</members>
+        <name>ReportFolder</name>
+    </types>
+    <types>
+        <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
+        <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
+        <members>flow_orchestration_stage_run_ootb_crt_two_four_eight</members>
+        <members>flow_orchestration_step_run_ootb_crt_two_four_eight</members>
+        <members>flow_orchestration_work_item_ootb_crt_two_four_eight</members>
+        <members>screen_flows_prebuilt_crt</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>CEO</members>
+        <members>CFO</members>
+        <members>COO</members>
+        <members>ChannelSalesTeam</members>
+        <members>CustomerSupportInternational</members>
+        <members>CustomerSupportNorthAmerica</members>
+        <members>DirectorChannelSales</members>
+        <members>DirectorDirectSales</members>
+        <members>EasternSalesTeam</members>
+        <members>InstallationRepairServices</members>
+        <members>MarketingTeam</members>
+        <members>SVPCustomerServiceSupport</members>
+        <members>SVPHumanResources</members>
+        <members>SVPSalesMarketing</members>
+        <members>VPInternationalSales</members>
+        <members>VPMarketing</members>
+        <members>VPNorthAmericanSales</members>
+        <members>WesternSalesTeam</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>sfdc_liveagent</members>
+        <members>sfdc_livemessage</members>
+        <members>sfdc_phone</members>
+        <name>ServiceChannel</name>
+    </types>
+    <types>
+        <members>Available_Chat</members>
+        <members>Busy</members>
+        <members>On_Break</members>
+        <name>ServicePresenceStatus</name>
+    </types>
+    <types>
+        <members>Project__c</members>
+        <members>SalesforceOrg__c</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>MyImage</members>
+        <members>SiteSamples</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Case.ChangePriorityToHigh</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <version>56.0</version>
+</Package>

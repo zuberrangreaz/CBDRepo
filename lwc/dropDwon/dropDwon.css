@@ -1,0 +1,15 @@
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #d8dde6;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

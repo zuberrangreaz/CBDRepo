@@ -1,0 +1,115 @@
+<template>
+	<template  if:false={isConfiguring} >
+	<template if:false={newProjectCreat}>
+		<div style="background-color:#ffffff;">
+			<div class="spinner">
+				<template if:true={showSpinner}>
+					<lightning-spinner alternative-text="Loading" variant="brand" size="large">
+					</lightning-spinner>
+				</template>
+			</div>
+			<!------header------->
+			<article class="slds-card">
+				<div class="slds-page-header">
+					<div class="slds-page-header__row">
+						<div class="slds-page-header__col-title">
+							<div class="slds-media">
+								<div class="slds-media__figure">
+									<lightning-icon icon-name="standard:discounts" alternative-text="Preview"
+										title="user">
+									</lightning-icon>
+								</div>
+								<div class="slds-media__body">
+									<div class="slds-page-header__name">
+										<div class="slds-page-header__name-title">
+											<h1>
+												<span>Project</span>
+												<lightning-combobox name="" label="" value={value} options={TypeOptions}
+													onchange={handleTypeChange}> </lightning-combobox>
+											</h1>
+										</div>
+									</div>
+									<div if:true={configMessage} class="slds-m-left_x-small">
+										<p>{configMessage}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slds-page-header__col-actions">
+							<div class="slds-page-header__controls">
+								<div class="slds-page-header__control">
+									<ul class="slds-button-group-list">
+										<li>
+											<lightning-button variant="brand" label="New Project Pipline "
+												title="Primary action" onclick={newProjectPiplaineCreat}
+												class="slds-m-left_x-small">
+											</lightning-button>
+											<lightning-button variant="brand" label="Configure Pipline"
+												title="Primary action" onclick={toggleConfiguration}
+												class="slds-m-left_x-small">
+											</lightning-button>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<!------header end ------->
+
+			<template if:true={pipelineList}>
+				
+					<div class="slds-grid slds-wrap">
+						<template for:each={pipelineList} for:item="pipeline">
+							<div key={pipeline.Id}>
+								<lightning-layout>
+									<template if:true={pipeline.SalesforceOrgName}>
+										<template if:false={pipeline.isShowButtan}>
+											<div class="slds-p-top_x-large ">
+												<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+			                           </div>
+										</template>
+										<lightning-layout-item size="1">
+											<div class="slds-p-left_x-small">
+												<br>
+												<div class="coler" style="width:160px">
+													<article class="slds-tile slds-media">
+														<div class="slds-media__body">
+															<div class="slds-tile__header slds-grid slds-wrap">
+																<div class="slds-col slds-has-flexi-truncate">
+																	<h3 class="slds-tile__title slds-truncate"
+																		title="Contact Trammel Crow Company">
+																		<div class="slds-p-top_medium slds-p-left_medium">
+																				{pipeline.SalesforceOrgName}
+																		</div>
+																	</h3>
+																</div>
+															</div>
+															<div class="slds-tile__detail">
+																<br>
+                                                           </div>
+															</div>
+													</article>
+												</div>
+												<br>
+					                	</div>
+										</lightning-layout-item>
+									</template>
+								</lightning-layout>
+							</div>
+
+						</template>
+					</div>
+			</template>
+		</div>
+	</template>
+	</template>
+	<template if:true={newProjectCreat}>
+		<c-project-piplaine onchildmethod={callFromChild}></c-project-piplaine>
+	</template>
+	<template if:true={isConfiguring}>
+		<c-org-piplaine onchildmethod={callFromorgPiplaine} pipeline-list={pipelineList} projact-id={projactId}></c-org-piplaine>
+	</template>
+</template>

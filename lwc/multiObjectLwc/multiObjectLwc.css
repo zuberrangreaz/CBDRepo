@@ -1,0 +1,78 @@
+.slds-form-element {
+    margin: 1rem 0;
+}
+
+.inputIcon, .dropdownIcon, .objectIcons {
+    /* margin-right: 0.5rem; */
+}
+
+.verticalAlign {
+    vertical-align: middle;
+}
+
+.recordListBox {
+    padding: 0;
+}
+
+.slds-pill-container {
+    display: flex;
+}
+
+.slds-is-open .slds-dropdown {
+    display: block;
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+.searchIconContainer {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputBox {
+	/* padding-left: 52px; */
+}
+.objectName {
+	padding-left: 5px;
+}
+.dropdownIcon svg{
+	width: 1rem !important;
+    height: 1rem !important;
+    margin: 4px 0px 0px 4px !important;
+}
+.objectIcons {
+	border-radius: 0.1rem !important;
+}
+.objectIcons svg{
+	width: 1.4rem !important;
+    height: 1.4rem !important;
+}
+.recordListBox {
+	margin-top:0px !important;
+	overflow-y: scroll;
+}
+.fullWidth {
+	width: 100% !important;
+}
+.verticalAlign {
+	cursor: pointer;
+	margin: 6px 0px 0px 6px!important;
+}
+ 
+ 
+/* For Scrolling */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+   display: none !important;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}

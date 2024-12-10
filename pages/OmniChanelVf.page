@@ -1,0 +1,71 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <style>
+        /* Simple inline CSS for styling */
+        .container {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-section, .list-section {
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #0070d2;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #005bb5;
+        }
+        .account-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Account Management</h1>
+        
+        <!-- Form to Create New Account -->
+        <div class="form-section">
+            <h2>Create New Account</h2>
+            <apex:form >
+                <apex:commandButton action="{!save}" value="Save" styleClass="btn"/>
+            </apex:form>
+        </div>
+        
+        <!-- List of Accounts -->
+        <div class="list-section">
+            <h2>Account List</h2>
+            <apex:repeat value="{!accounts}" var="acc">
+                <div class="account-item">
+                    {!acc.Name}
+                </div>
+            </apex:repeat>
+        </div>
+    </div>
+</apex:page>

@@ -1,0 +1,33 @@
+.coler{
+	background-color: white;
+	border: 1px solid #070707;
+  border-radius: .35rem;
+  display: block;
+}
+.line.arrow-right:after {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid black;
+}
+.line-container {
+  display: flex;
+  width: 100%;
+  margin: 20px auto;
+  align-items: center;
+}
+.font{
+  font-size: 17px;
+}
+.i {
+  padding-left: 46px;
+}
+/*.deleteB {
+    position: absolute;
+    top: 0; right: 0;
+}*/

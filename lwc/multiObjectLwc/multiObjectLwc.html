@@ -1,0 +1,90 @@
+<template>
+    <div class="slds-form-element">
+        <template if:true={label}>
+            <label class="slds-form-element__label">{label}</label>
+        </template>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+                     role="combobox">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right">
+                        <template if:true={selectedRecord.value}>
+                            <div class="slds-pill-container">
+                                <lightning-pill class="fullWidth" label={selectedRecord.label} name={selectedRecord.value}
+                                                onremove={handleRemove}>
+                                    <lightning-icon icon-name={selectedObject.iconName} size="x-small"
+                                                    alternative-text="objectIcon"></lightning-icon>
+                                </lightning-pill>
+                            </div>
+                        </template>
+                        <template if:false={selectedRecord.value}>
+                            <span class="slds-icon_container slds-combobox__input-entity-icon inputIcon slds-input__icon_left">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                                    <button class="slds-button slds-button_icon" title="Show More"
+                                            style="display: inline-flex;height: 40px;" onclick={showObjects}>
+                                        <lightning-icon class="objectIcons" icon-name={selectedObject.iconName}
+                                                        alternative-text="objectIcon"></lightning-icon>
+                                        <lightning-icon class="dropdownIcon" icon-name="utility:down"
+                                                        alternative-text="downIcon"></lightning-icon>
+                                    </button>
+                                    <template if:true={showObjectList}>
+                                        <div class="slds-dropdown slds-dropdown_left">
+                                            <ul class="slds-dropdown__list">
+                                                <template for:each={objectList} for:item="obj">
+                                                    <li key={obj.APIName} class="slds-dropdown__item"
+                                                        onmousedown={selectObject} data-id={obj.APIName}>
+                                                        <a href="javascript:void(0);" role="menuitem">
+                                                            <lightning-icon class="objectIcons" icon-name={obj.iconName}
+                                                                            alternative-text="objectIcon"></lightning-icon>
+                                                            <span class="slds-truncate objectName">{obj.label}</span>
+                                                        </a>
+                                                    </li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </template>
+                                </div>
+                            </span>
+                            <lightning-input class="inputBox" placeholder={placeholder} value={searchString}
+                                             onkeyup={searchRecords} onblur={blurRecordList} data-id="combobox-id-1"
+                                             aria-controls="listbox-id-1" autocomplete="off">
+                            </lightning-input>
+                            <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                                <lightning-icon icon-name="utility:search" size="x-small" alternative-text="search" style="padding-top: 8px;"></lightning-icon>
+                            </span>
+                            <template if:true={showSpinner}>
+                            <lightning-spinner class="slds-hide" size="small" variant="brand"></lightning-spinner>
+                            </template>
+                        </template>
+                    </div>
+                    <template if:true={openDrop}>
+                     <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+                         style={dropdownStyle}>
+                        <ul class="slds-listbox slds-listbox_vertical recordListBox">
+                            <template if:true={isMessageEmpty}>
+                                <template for:each={recordsList} for:item="rec">
+                                    <li key={rec.value} class="slds-listbox__item" onmousedown={selectItem} data-id={rec.value}>
+                                        <div class="slds-media slds-listbox__option_entity">
+                                            <lightning-icon icon-name={selectedObject.iconName} alternative-text="objectIcon"></lightning-icon>
+                                            <span class="verticalAlign">
+                                                <span class="slds-truncate">{rec.label}</span>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </template>
+                            </template>
+                            <template if:false={isMessageEmpty}>
+                                <li class="slds-listbox__item">
+                                    <div id="option1" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta">
+                                        <span class="slds-media__body">{message}</span>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div> 
+                </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

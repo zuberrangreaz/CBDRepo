@@ -1,0 +1,16 @@
+<template>
+
+	<lightning-layout multiple-rows>
+		<lightning-layout-item size="3" padding="around-small" small-device-size="3" medium-device-size="6"
+			large-device-size="3">
+			<lightning-card variant="Narrow" if:true={options}>
+				<div class="slds-p-horizontal_small">
+					<c-multi-select-pick-list multi-select="true" onselectoption={handleSelectOptionList}
+						options={options} selected-values={selectedValueList} label="multiSelect Pick List">
+					</c-multi-select-pick-list>
+				</div>
+			</lightning-card>
+		</lightning-layout-item>
+	</lightning-layout>
+
+</template>

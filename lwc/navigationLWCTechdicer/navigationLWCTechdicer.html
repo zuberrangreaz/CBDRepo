@@ -1,0 +1,13 @@
+<template>
+	<lightning-card title="Account List" icon-name="custom:custom63">
+		<div class="slds-m-around_medium">
+			<p class="slds-p-horizontal_medium">Display records With Row Action </p>
+			<br></br>
+			<div style="height: 180px;">
+				<lightning-datatable key-field="id" data={items} columns={columns} hide-checkbox-column="true"
+					show-row-number-column="true" onrowaction={handleRowAction}>
+				</lightning-datatable>
+			</div>
+		</div>
+	</lightning-card>
+</template>

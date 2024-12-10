@@ -1,0 +1,17 @@
+.slds-panel {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.editable-content {
+    border: 1px solid #ccc;
+    min-height: 150px;
+    padding: 5px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.line-container {
+    padding: 5px;
+}

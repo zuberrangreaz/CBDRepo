@@ -1,0 +1,43 @@
+.THIS .inputBox input{
+	padding-left: 52px;
+}
+.THIS .objectName {
+	padding-left: 5px;
+}
+.THIS .dropdownIcon svg{
+	width: 1rem !important;
+    height: 1rem !important;
+    margin: 4px 0px 0px 4px !important;
+}
+.THIS .objectIcons {
+	border-radius: 0.1rem !important;
+}
+.THIS .objectIcons svg{
+	width: 1.4rem !important;
+    height: 1.4rem !important;
+}
+.THIS .recordListBox {
+	margin-top:0px !important;
+	overflow-y: scroll;
+}
+.THIS .fullWidth {
+	width: 100% !important;
+}
+.THIS .verticalAlign {
+	cursor: pointer;
+	margin: 6px 0px 0px 6px!important;
+}
+ 
+ 
+/* For Scrolling */
+.THIS ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+.THIS ::-webkit-scrollbar-track {
+   display: none !important;
+}
+.THIS ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}

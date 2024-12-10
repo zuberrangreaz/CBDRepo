@@ -1,0 +1,142 @@
+<template>
+	<div class="header">
+		<div class="slds-tabs_card ">
+			<div class="slds-page-header">
+				<div class="slds-page-header__row">
+					<div class="slds-page-header__col-title">
+						<div class="slds-media">
+							<div class="slds-media__figure">
+								<span class="slds-icon_container slds-icon-standard-opportunity">
+                         <lightning-icon icon-name="standard:record_create" alternative-text="record_create" title="record_create"></lightning-icon>
+                            </span>
+							</div>
+							<div class="slds-media__body">
+								<div class="slds-page-header__name">
+									<div class="slds-page-header__name-title">
+										<h1>
+											<span>Create a new Salesforce Org pipeline and Edit Delete </span>
+											<span class="slds-page-header__title slds-truncate" title="Recently Viewed">Salesforce Org Pipeline</span>
+										</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<lightning-layout>
+		<template if:true={showSpinner}>
+			<lightning-spinner alternative-text="Loading" variant="brand" size="large">
+			</lightning-spinner>
+		</template>
+		<lightning-layout-item size="2" padding="around-small">
+			<lightning-card variant="Narrow">
+				<div class="cardOne">
+					<lightning-icon icon-name="standard:agent_home" alternative-text="agent_home!" title="agent_home"
+						onclick={callParent}></lightning-icon>
+					<div class="buttonLabel">Back Home</div>
+					<div class="container slds-p-top_medium">
+						<lightning-icon icon-name='action:new' alternative-text='add' title='Add Salesforce'
+							onclick={handleButtonClick} size='small'></lightning-icon>
+					</div>
+					<div class="buttonLabel">Add Salesforce Org</div>
+				</div>
+			</lightning-card>
+		</lightning-layout-item>
+		<lightning-layout-item size="10" padding="around-small" class="cardWidth">
+			<lightning-card variant="Narrow">
+				<div class="card2Height">
+					<div class="slds-grid slds-grid_align-end slds-m-bottom_small">
+						<lightning-button label="Save " variant="brand" onclick={handleSave}
+							class="slds-m-right_x-small">
+						</lightning-button>
+					</div>
+					<div style="padding-top: 170px;">
+						<lightning-layout>
+							<template if:true={pipelineList}>
+								<template for:each={pipelineList} for:item="pipeline">
+									<template if:true={pipeline.SalesforceOrgName} key={pipeline.Id}>
+										<lightning-layout-item size="2" key={pipeline.Id}>
+											<div class="slds-grid slds-wrap" >
+												<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+													<template if:false={pipeline.isShowButtan}>
+														<div class="slds-p-top_medium">
+															<img src={imageURL} alt="Arrow Image" height="100px" style="padding-left: 10px;"/>
+															</div>
+													</template>
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12" >
+													<div class="slds-p-left_x-small">
+														<div class="color" style="width:130px">
+															<article class="slds-tile slds-media">
+
+																<div class="slds-media__body">
+																	<div class="slds-tile__header slds-grid slds-wrap">
+																		<div class="slds-col slds-has-flexi-truncate">
+																			<h3 class="slds-tile__title slds-truncate"
+																				title="Contact Trammel Crow Company">
+																				<div class="slds-p-top_medium slds-p-left_medium" style="padding-bottom: 20px;">
+																					<div class="drop-target font"
+																						data-item={pipeline.SalesforceOrgName}
+																						data-order={pipeline.Order}
+																						data-id={pipeline.Id}
+																						draggable="true" ondrop={Drop}
+																						ondragover={DragOver}
+																						ondragstart={drag}>
+																						{pipeline.SalesforceOrgName}
+																					</div>
+																				</div>
+																			</h3>
+																		</div>
+																		<template if:false={pipeline.isShowButtan}>
+																		<div
+																			class="slds-col slds-no-flex slds-align-top">
+																			<button class="slds-button slds-button_icon slds-button_icon-inverse  deleteB"
+                                                                           title="delete" onclick={handleDeleteAction} data-id={pipeline.Id}>
+                                                                           <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete"  size='x-small'></lightning-icon>
+																	</button>
+																		</div>
+																		</template>
+																	</div>
+																	<div class="slds-tile__detail"></div>
+																</div>
+															</article>
+														</div>
+													</div>
+												</div>
+											</div>
+										</lightning-layout-item>
+									</template>
+								</template>
+
+								<template if:true={boxClike}>
+									<template for:each={boxNumber} for:item="box" key={box}>
+										<lightning-layout-item size="2" key={box}>
+											<div class="layout-container">
+												<img src={imageURL} alt="Arrow Image" height="100px" width="60px" style="padding-left: 20px;"/>
+												<div style="padding-left: 10px;">
+													<div class="box">
+														<div class="slds-p-horizontal_small">
+															<lightning-record-picker label="SalesforceOrg"
+																variant="label-hidden"
+																placeholder="Search Salesforce Org.."
+																object-api-name="SalesforceOrg__c"
+																onchange={handleChange}>
+															</lightning-record-picker>
+														</div>
+													</div>
+												</div>
+											</div>
+										</lightning-layout-item>
+									</template>
+								</template>
+							</template>
+						</lightning-layout>
+					</div>
+				</div>
+			</lightning-card>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

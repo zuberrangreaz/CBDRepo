@@ -1,0 +1,8 @@
+<apex:page standardController="Account" extensions="ContactExportToExcel">
+    <apex:form >
+        <div style="text-align: center;">
+            <apex:commandButton value="Export To Excel" action="{!ExportToExcel}" style="margin: 10px;"/>  
+            <apex:commandButton value="Back" action="{!cancel}" style="margin: 10px;"/> 
+        </div>
+    </apex:form>
+</apex:page>

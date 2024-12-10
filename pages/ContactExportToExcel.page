@@ -1,0 +1,9 @@
+<apex:page standardController="Account" extensions="ContactExportToExcel" contentType="application/vnd.ms-excel#Contacts.xls" cache="true">
+    <apex:pageBlock >
+        <apex:pageblocktable value="{!conList }" var="tab">
+            <apex:repeat value="{!selectedFieldsList}" var="field">
+                <apex:column value="{!tab[field]}"/>
+            </apex:repeat>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:page>

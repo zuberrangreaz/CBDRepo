@@ -1,0 +1,28 @@
+.slds-box_custom {
+    border: 1px solid #d8dde6;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+    background-color: #f4f6f9;
+}
+.coler{
+	background-color: white;
+	border: 1px solid #070707;
+  border-radius: .35rem;
+  display: block;
+}
+.i {
+  padding-left: 160px;
+}
+.arrow-image {
+    display: block;
+    margin: 10px auto;
+    height: 20px; /* Adjust the size of the arrow image */
+    width: auto;
+}
+.custom-box {
+    width: 150px;
+    padding: 10px;
+
+    border: 1px solid #d8dde6;
+}

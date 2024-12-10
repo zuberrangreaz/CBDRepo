@@ -1,0 +1,9 @@
+<template>
+    <div if:true={showSpinner} >
+	<c-ce-spinner></c-ce-spinner>
+    </div>
+
+	<lightning-button label="Show Spinner" onclick={handleShowSpinner}></lightning-button>
+	<lightning-button label="Hide Spinner" onclick={handleHideSpinner}></lightning-button>
+	<!-- Your component's content goes here -->
+</template>

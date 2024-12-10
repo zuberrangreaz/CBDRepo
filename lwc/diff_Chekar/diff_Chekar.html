@@ -1,0 +1,38 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <div class="slds-col slds-size_1-of-1 slds-text-align_center">
+                    <lightning-button onclick={compareText} variant="brand" label="Find Difference" icon-position="right" title="find" icon-name="utility:search" class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <h1 class="slds-truncate">Source Code  </h1>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div data-id="leftPanel" class="slds-panel__body editable-content" style="white-space: pre-wrap;" contenteditable="true" oninput={handleLeftPanelInput}>
+                                {sourceOrgComponentCode}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <h1 class="slds-truncate">Existing Code in Destination</h1>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div data-id="rightPanel" class="slds-panel__body editable-content" style="white-space: pre-wrap;" contenteditable="true" oninput={handleRightPanelInput}>
+                                {targetOrgComponentCode}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-panel__body merged-lines"></div>
+        </div>
+    </div>
+</template>

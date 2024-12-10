@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Multi Select Picklist">
+        <div class="slds-m-around_medium">
+            <div class="dropdown-container">
+                <lightning-input type="text" label="Select Filter " placeholder="Select Filter"
+                    value={searchKey} onchange={handleSearch} onclick={toggleDropdown}></lightning-input>
+                <div class="dropdown" if:true={isDropdownOpen}>
+                    <template for:each={filteredOptions} for:item="option">
+                        <div key={option.value} class="slds-m-around_xx-small">
+                            <lightning-input type="checkbox" name="options" label={option.label}
+                                checked={option.selected} data-id={option.value} data-selected={option.selected} onchange={handleCheckboxChange}></lightning-input>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

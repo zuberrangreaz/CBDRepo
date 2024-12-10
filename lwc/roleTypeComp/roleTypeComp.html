@@ -1,0 +1,379 @@
+<template>
+	<div if:false={newProjectCreat}>
+		<div style="background-color:#ffffff;">
+			<div class="spinner">
+				<template if:true={showSpinner}>
+					<lightning-spinner alternative-text="Loading" variant="brand" size="large">
+					</lightning-spinner>
+				</template>
+			</div>
+			<!------header------->
+			<article class="slds-card">
+				<div class="slds-page-header">
+					<div class="slds-page-header__row">
+						<div class="slds-page-header__col-title">
+							<div class="slds-media">
+								<div class="slds-media__figure">
+									<lightning-icon icon-name="standard:discounts" alternative-text="Preview"
+										title="user">
+									</lightning-icon>
+								</div>
+								<div class="slds-media__body">
+									<div class="slds-page-header__name">
+										<div class="slds-page-header__name-title">
+											<h1>
+												<span>Project</span>
+												<lightning-combobox name="" label="" value={value} options={TypeOptions}
+													onchange={handleTypeChange}> </lightning-combobox>
+											</h1>
+										</div>
+									</div>
+									<div if:true={configMessage} class="slds-m-left_x-small">
+										<p>{configMessage}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slds-page-header__col-actions">
+							<div class="slds-page-header__controls">
+								<div class="slds-page-header__control">
+									<ul class="slds-button-group-list">
+										<li>
+											<lightning-button variant="brand" label="New Project Pipline "
+												title="Primary action" onclick={newProjectPiplaineCreat}
+												class="slds-m-left_x-small">
+											</lightning-button>
+
+											<lightning-button variant="brand" label="Configure Pipline"
+												title="Primary action" onclick={toggleConfiguration}
+												class="slds-m-left_x-small">
+											</lightning-button>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<!------header And ------->
+			<div class="slds-scrollable_x" style="height: 8rem;width: 93rem; " tabindex="0">
+				<lightning-layout >
+					<lightning-layout-item size="1" >
+						<div class="slds-p-left_x-small">
+							<br>
+							<template if:true={firstPipelineName} >
+								<div class="coler" style="width:160px" >
+									<article class="slds-tile slds-media"  >
+										<div class="slds-media__figure" >
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-5" value="checkbox-unique-id-5" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-5"><span class="slds-checkbox_faux"></span> <span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span>
+    											    </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={firstPipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{firstPipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+														<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                                                         <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+                                                          </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+            </div>
+											</div>
+									</article>
+								</div>
+							</template>
+							<br>
+							<!----<template if:true={secondPipelineName}>
+						<div class="coler" style="width:240px">
+							<article class="slds-tile slds-media">
+								<div class="slds-media__figure">
+									<div class="slds-p-left_small">
+										<div class="slds-p-top_medium">
+											<div class="slds-checkbox">
+												<input type="checkbox" name="options" id="checkbox-unique-id-6" value="checkbox-unique-id-6" />
+												<label class="slds-checkbox__label" for="checkbox-unique-id-6"><span class="slds-checkbox_faux"></span>  <span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span>  </label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="slds-media__body">
+									<h3 class="slds-tile__title slds-truncate" title="Contact Trammel Crow Company">
+										<div class="slds-p-top_medium">
+											<div class="drop-target font" data-item={secondPipelineName}
+												draggable="true" ondrop={Drop} ondragover={DragOver} ondragstart={drag}>
+												{secondPipelineName}
+											</div>
+										</div>
+									</h3>
+									<div class="slds-tile__detail">
+										<br>
+				              </div>
+									</div>
+							</article>
+						</div>
+					</template>----->
+						</div>
+					</lightning-layout-item>
+					<template if:true={secondPipelineName}>
+						<div class="slds-p-top_x-large i">
+							<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+			</div>
+							<lightning-layout-item size="1">
+								<br>
+								<!---<div class="slds-p-top_x-large">
+							<div class="slds-p-top_large"> ---->
+								<div class="coler" style="width:160px">
+									<article class="slds-tile slds-media">
+										<div class="slds-media__figure">
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-7" value="checkbox-unique-id-7" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-7"><span class="slds-checkbox_faux"></span><span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span></label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={secondPipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{secondPipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                  								  <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+              									  </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+											</div>
+											</div>
+									</article>
+								</div>
+							</lightning-layout-item>
+					</template>
+					<template if:true={thirdPipelineName}>
+						<div class="slds-p-top_x-large i">
+							<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+					</div>
+							<lightning-layout-item size="1">
+								<br>
+								<div class="coler" style="width:160px">
+									<article class="slds-tile slds-media">
+										<div class="slds-media__figure">
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-8" value="checkbox-unique-id-8" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-8"> <span class="slds-checkbox_faux"></span>  <span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span>  </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={thirdPipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{thirdPipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                  								  <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+              									  </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+											</div>
+											</div>
+									</article>
+								</div>
+							</lightning-layout-item>
+					</template>
+					<template if:true={fourPipelineName}>
+						<div class="slds-p-top_x-large i">
+							<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+					</div>
+							<lightning-layout-item size="1">
+								<br>
+								<div class="coler" style="width:160px">
+									<article class="slds-tile slds-media">
+										<div class="slds-media__figure">
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-9" value="checkbox-unique-id-9" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-9"> <span class="slds-checkbox_faux"></span><span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span> </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={fourPipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{fourPipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                  								  <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+              									  </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+											</div>
+											</div>
+									</article>
+								</div>
+							</lightning-layout-item>
+					</template>
+					<template if:true={fivePipelineName}>
+						<div class="slds-p-top_x-large i">
+							<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+					</div>
+							<lightning-layout-item size="1">
+								<br>
+								<div class="coler" style="width:160px">
+									<article class="slds-tile slds-media">
+										<div class="slds-media__figure">
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-10" value="checkbox-unique-id-10" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-10"> <span class="slds-checkbox_faux"></span><span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span> </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={fivePipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{fivePipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                  								  <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+              									  </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+											</div>
+											</div>
+									</article>
+								</div>
+							</lightning-layout-item>
+					</template>
+
+					<template if:true={sixPipelineName}>
+						<div class="slds-p-top_x-large i">
+							<img src={imageURL} alt="User Image" height="100px" width="100px"/>
+					</div>
+							<lightning-layout-item size="1">
+								<br>
+								<div class="coler" style="width:160px">
+									<article class="slds-tile slds-media">
+										<div class="slds-media__figure">
+											<div class="slds-p-left_small">
+												<div class="slds-p-top_medium">
+													<div class="slds-checkbox">
+														<input type="checkbox" name="options" id="checkbox-unique-id-11" value="checkbox-unique-id-11" />
+														<label class="slds-checkbox__label" for="checkbox-unique-id-11"> <span class="slds-checkbox_faux"></span><span class="slds-form-element__label slds-assistive-text">Did you complete the task: Contact Trammel Crow Company?</span> </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slds-media__body">
+											<div class="slds-tile__header slds-grid slds-wrap">
+												<div class="slds-col slds-has-flexi-truncate">
+													<h3 class="slds-tile__title slds-truncate"
+														title="Contact Trammel Crow Company">
+														<div class="slds-p-top_medium">
+															<div class="drop-target font" data-item={sixPipelineName}
+																draggable="true" ondrop={Drop} ondragover={DragOver}
+																ondragstart={drag}>
+																{sixPipelineName}
+															</div>
+														</div>
+													</h3>
+												</div>
+												<div class="slds-col slds-no-flex slds-align-top">
+													<button class="slds-button slds-button_icon slds-button_icon-inverse deleteB" title="delete" onclick={handleDeleteAction} data-id={box}>
+                  								  <lightning-icon icon-name="utility:delete" alternative-text="delete!" title="delete" size='x-small'></lightning-icon>
+              									  </button>
+												</div>
+											</div>
+											<div class="slds-tile__detail">
+												<br>
+											</div>
+											</div>
+									</article>
+								</div>
+							</lightning-layout-item>
+					</template>
+
+				</lightning-layout>
+			</div>
+		</div>
+	</div>
+	<div if:true={newProjectCreat}>
+		<c-project-piplaine onchildmethod={callFromChild}></c-project-piplaine>
+	</div>
+</template>
