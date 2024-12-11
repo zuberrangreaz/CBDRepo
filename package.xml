@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>GreetingController</members>
-        <members>GreetingControllerTest</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
         <members>customer__c.Birthdate__c</members>
-        <members>customer__c.Coures__c</members>
-        <members>customer__c.State__c</members>
+        <members>customer__c.Country__c</members>
+        <members>customer__c.Phone__c</members>
         <name>CustomField</name>
     </types>
     <types>
